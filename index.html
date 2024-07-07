@@ -15,38 +15,8 @@
         }
         header {
             background-color: #333;
-            color: #fff;
+            color: #228b22;
             padding: 10px 0;
-        }
-        header nav {
-            display: flex;
-            justify-content: space-between;
-            padding: 0 20px;
-        }
-        header nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-        header nav ul li {
-            position: relative;
-        }
-        header nav ul li a {
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            display: block;
-        }
-        header nav ul li ul {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #444;
-        }
-        header nav ul li:hover ul {
-            display: block;
         }
         .grid-container {
             display: grid;
@@ -61,28 +31,6 @@
         .slider img {
             width: 100%;
             display: block;
-        }
-        .accordion {
-            border: 4px solid #ccc;
-            border-radius: 4px;
-        }
-        .accordion-item {
-            border-bottom: 4px solid #ccc;
-        }
-        .accordion-item:last-child {
-            border-bottom: none;
-        }
-        .accordion-header {
-            background-color: #eee;
-            cursor: pointer;
-            padding: 10px;
-        }
-        .accordion-body {
-            display: none;
-            padding: 10px;
-        }
-        .form-group {
-            margin-bottom: 15px;
         }
         .form-group label {
             display: block;
@@ -114,19 +62,41 @@
 <body>
 
 <header>
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li>
-                <a href="#">About</a>
-                <ul>
-                    <li><a href="#">Team</a></li>
-                    <li><a href="#">History</a></li>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+        <div class="container-fluid" >
+            <a class="navbar-brand" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/One_Ring_Blender_Render.png/274px-One_Ring_Blender_Render.png"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Team</a></li>
+                            <li><a class="dropdown-item" href="#">Examples</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Order</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Featured</a>
+                    </li>
                 </ul>
-            </li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
     </nav>
 </header>
 
@@ -158,48 +128,81 @@
         </div>
     </div>
     <div class="main">
-        <div class="accordion">
+        <div class="accordion" id="accordionExample">
             <div class="accordion-item">
-                <div class="accordion-header">Section 1</div>
-                <div class="accordion-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien purus.</div>
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Що ж це?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Можна замовити все, що стосується кіноадаптації "Володаря перснів".</strong> Отримайте своюкопію Андрілла чи Жала!
+                        <p><strong>Вироби колекційні - не бойові та не заточені!</strong></p>
+                    </div>
+                </div>
             </div>
             <div class="accordion-item">
-                <div class="accordion-header">Section 2</div>
-                <div class="accordion-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien purus.</div>
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Якість
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Наші ковалі мають більше 5 років досвіду.</strong> Замовляючи в нас ви отримуєте довічну гарантію на колекційні предмети.
+                    </div>
+                </div>
             </div>
             <div class="accordion-item">
-                <div class="accordion-header">Section 3</div>
-                <div class="accordion-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien purus.</div>
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Доставка
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Доставку робимо по всій Україні</strong>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <div class="right">
         <form>
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email">
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
             </div>
-            <div class="form-group">
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone">
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Don't log out</label>
             </div>
-            <div class="form-group">
-                <label for="city">City</label>
-                <textarea id="city" name="city"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message"></textarea>
-            </div>
-            <div class="form-group">
-                <button type="submit">Submit</button>
-                <button type="reset">Reset</button>
-            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01">Options</label>
+            <select class="form-select" id="inputGroupSelect01">
+                <option selected>Choose...</option>
+                <option value="1">Sword</option>
+                <option value="2">Dagger</option>
+                <option value="3">Other</option>
+            </select>
+        </div>
+
+        <div class="input-group mb-3">
+            <select class="form-select" id="inputGroupSelect02">
+                <option selected>Choose weight...</option>
+                <option value="1">Light</option>
+                <option value="2">Natural</option>
+            </select>
+            <label class="input-group-text" for="inputGroupSelect02">Options</label>
+        </div>
     </div>
 </div>
 
